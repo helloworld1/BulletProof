@@ -13,6 +13,7 @@ obj/
 .classpath
 build/
 out/
+war/
 
 # This contains secrets and should not be checked in!
 AMSecrets.java
