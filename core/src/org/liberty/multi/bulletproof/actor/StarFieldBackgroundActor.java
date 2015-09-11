@@ -1,13 +1,12 @@
-package org.liberty.multi.bulletproof;
+package org.liberty.multi.bulletproof.actor;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.Texture.TextureWrap;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import org.liberty.multi.bulletproof.BulletProof;
 
 public class StarFieldBackgroundActor extends Actor {
 

@@ -1,4 +1,4 @@
-package org.liberty.multi.bulletproof;
+package org.liberty.multi.bulletproof.resolver;
 
 public interface ScoreBoardResolver {
     boolean isSignedIn();

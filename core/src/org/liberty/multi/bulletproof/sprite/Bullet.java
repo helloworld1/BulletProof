@@ -1,10 +1,11 @@
-package org.liberty.multi.bulletproof;
+package org.liberty.multi.bulletproof.sprite;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.Pool.Poolable;
+import org.liberty.multi.bulletproof.BulletProof;
 
 public class Bullet extends Sprite implements Poolable {
 

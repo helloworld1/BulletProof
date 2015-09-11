@@ -1,4 +1,4 @@
-package org.liberty.multi.bulletproof;
+package org.liberty.multi.bulletproof.value;
 
 public class PreferenceKeys {
     public static final String SETTING_NAME = "org.liberty.multi.bulletproof.Preferences";

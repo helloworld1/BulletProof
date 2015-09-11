@@ -1,4 +1,4 @@
-package org.liberty.multi.bulletproof;
+package org.liberty.multi.bulletproof.util;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;

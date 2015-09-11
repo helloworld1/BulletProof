@@ -1,4 +1,7 @@
-package org.liberty.multi.bulletproof;
+package org.liberty.multi.bulletproof.object;
+
+import org.liberty.multi.bulletproof.logic.GameRecorder;
+import org.liberty.multi.bulletproof.util.GameStringUtils;
 
 public class GameInfo {
 
@@ -8,7 +11,7 @@ public class GameInfo {
 
     private int bulletDodgedCount;
 
-    public GameRecorder gameRecorder; 
+    public GameRecorder gameRecorder;
 
     public GameInfo() {
         bulletDodgedCount = 0;

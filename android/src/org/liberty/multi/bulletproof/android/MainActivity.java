@@ -10,8 +10,8 @@ import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 import com.google.android.gms.games.Games;
 import com.google.example.games.basegameutils.GameHelper;
 import org.liberty.multi.bulletproof.BulletProof;
-import org.liberty.multi.bulletproof.PreferenceKeys;
-import org.liberty.multi.bulletproof.ScoreBoardResolver;
+import org.liberty.multi.bulletproof.value.PreferenceKeys;
+import org.liberty.multi.bulletproof.resolver.ScoreBoardResolver;
 
 public class MainActivity extends AndroidApplication implements ScoreBoardResolver {
 

@@ -1,8 +1,9 @@
-package org.liberty.multi.bulletproof;
+package org.liberty.multi.bulletproof.util;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.input.GestureDetector.GestureListener;
 import com.badlogic.gdx.math.Vector2;
+import org.liberty.multi.bulletproof.sprite.Aircraft;
 
 public class AircraftControlGestureListener implements GestureListener {
 

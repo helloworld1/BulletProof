@@ -1,6 +1,7 @@
-package org.liberty.multi.bulletproof;
+package org.liberty.multi.bulletproof.logic;
 
 import com.badlogic.gdx.math.MathUtils;
+import org.liberty.multi.bulletproof.object.GameInfo;
 
 public class GameEventManager {
 

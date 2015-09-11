@@ -1,4 +1,4 @@
-package org.liberty.multi.bulletproof;
+package org.liberty.multi.bulletproof.util;
 
 /**
  * Do string manupilation in the game

@@ -1,4 +1,4 @@
-package org.liberty.multi.bulletproof;
+package org.liberty.multi.bulletproof.util;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetDescriptor;

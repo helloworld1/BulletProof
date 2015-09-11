@@ -1,4 +1,4 @@
-package org.liberty.multi.bulletproof;
+package org.liberty.multi.bulletproof.resolver;
 
 public class DummyScoreBoard implements ScoreBoardResolver {
 

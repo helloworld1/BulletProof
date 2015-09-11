@@ -1,4 +1,4 @@
-package org.liberty.multi.bulletproof;
+package org.liberty.multi.bulletproof.logic;
 
 import com.badlogic.gdx.utils.ArrayMap;
 

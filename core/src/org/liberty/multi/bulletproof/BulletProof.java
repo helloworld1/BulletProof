@@ -10,6 +10,10 @@ import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import org.liberty.multi.bulletproof.resolver.ScoreBoardResolver;
+import org.liberty.multi.bulletproof.resolver.ShareResolver;
+import org.liberty.multi.bulletproof.screen.LoadingScreen;
+import org.liberty.multi.bulletproof.util.ShaderAssetLoader;
 
 public class BulletProof extends Game {
     public SpriteBatch batch;

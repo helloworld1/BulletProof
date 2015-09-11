@@ -4,8 +4,8 @@ import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.gwt.GwtApplication;
 import com.badlogic.gdx.backends.gwt.GwtApplicationConfiguration;
 import org.liberty.multi.bulletproof.BulletProof;
-import org.liberty.multi.bulletproof.DummyScoreBoard;
-import org.liberty.multi.bulletproof.DummyShareResolver;
+import org.liberty.multi.bulletproof.resolver.DummyScoreBoard;
+import org.liberty.multi.bulletproof.resolver.DummyShareResolver;
 
 public class HtmlLauncher extends GwtApplication {
 

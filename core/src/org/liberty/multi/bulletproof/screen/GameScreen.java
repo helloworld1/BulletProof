@@ -1,13 +1,7 @@
-package org.liberty.multi.bulletproof;
+package org.liberty.multi.bulletproof.screen;
 
-import org.liberty.multi.bulletproof.GameRecorder.BulletData;
-
-import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.*;
 import com.badlogic.gdx.Input.Keys;
-import com.badlogic.gdx.InputAdapter;
-import com.badlogic.gdx.InputMultiplexer;
-import com.badlogic.gdx.InputProcessor;
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -18,6 +12,15 @@ import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Pool;
+import org.liberty.multi.bulletproof.BulletProof;
+import org.liberty.multi.bulletproof.logic.GameEventManager;
+import org.liberty.multi.bulletproof.logic.GameRecorder;
+import org.liberty.multi.bulletproof.logic.GameRecorder.BulletData;
+import org.liberty.multi.bulletproof.logic.GameTimer;
+import org.liberty.multi.bulletproof.object.GameInfo;
+import org.liberty.multi.bulletproof.sprite.Aircraft;
+import org.liberty.multi.bulletproof.sprite.Bullet;
+import org.liberty.multi.bulletproof.util.AircraftControlGestureListener;
 
 
 public class GameScreen implements Screen {

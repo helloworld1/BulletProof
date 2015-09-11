@@ -1,7 +1,8 @@
-package org.liberty.multi.bulletproof;
+package org.liberty.multi.bulletproof.logic;
 
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
+import org.liberty.multi.bulletproof.sprite.Bullet;
 
 public class GameRecorder {
 
