@@ -2,6 +2,7 @@ package org.liberty.multi.bulletproof.android;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
@@ -47,9 +48,20 @@ public class MainActivity extends AndroidApplication implements ScoreBoardResolv
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Enable immersive mode
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         
+        // Setup application
         AndroidApplicationConfiguration cfg = new AndroidApplicationConfiguration();
-        
+
         initialize(new BulletProof(this, new AndroidShareResolver(this)), cfg);
 
         this.gameHelper = new GameHelper(this, GameHelper.CLIENT_GAMES);
@@ -161,5 +173,4 @@ public class MainActivity extends AndroidApplication implements ScoreBoardResolv
             }
         });
     }
-
 }
