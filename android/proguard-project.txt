@@ -26,8 +26,10 @@
 -dontwarn com.badlogic.gdx.utils.GdxBuild
 -dontwarn com.badlogic.gdx.physics.box2d.utils.Box2DBuild
 -dontwarn com.badlogic.gdx.jnigen.BuildTarget*
+-dontwarn com.google.android.gms.**
 
 -keep class com.badlogic.gdx.controllers.android.AndroidControllers
+-keep class !android.support.v7.internal.view.menu.**,** {*;}
 
 -keepclassmembers class com.badlogic.gdx.backends.android.AndroidInput* {
    <init>(com.badlogic.gdx.Application, android.content.Context, java.lang.Object, com.badlogic.gdx.backends.android.AndroidApplicationConfiguration);
