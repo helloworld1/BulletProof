@@ -41,6 +41,8 @@ public class MainMenuScreen implements Screen {
 
     private TextButton signInOutButton;
 
+    private TextButton quitButton;
+
     private StarFieldBackgroundActor starFieldBackgroundActor;
 
     private final OrthographicCamera camera;
@@ -89,6 +91,8 @@ public class MainMenuScreen implements Screen {
         } else {
             signInOutButton =  new TextButton("Sign in", game.skin, "med_button");
         }
+
+        quitButton = new TextButton("Quit", game.skin, "big_button");
 
         playButton.addListener(new ChangeListener() {
             @Override
@@ -143,7 +147,12 @@ public class MainMenuScreen implements Screen {
             }
         });
 
-
+        quitButton.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                Gdx.app.exit();
+            }
+        });
 
         stage = new Stage();
         stage.setViewport(new StretchViewport(game.viewportWidth, game.viewportHeight));
@@ -157,12 +166,13 @@ public class MainMenuScreen implements Screen {
         table.row();
         table.add(gameTitleLabel).height(300).width(400);
         table.row();
-        table.add(playButton).height(100).width(400);
+        table.add(playButton).height(85).width(400);
         table.row();
-        table.add(leaderboardButton).height(100);
+        table.add(leaderboardButton).height(85);
         table.row();
-        table.add(achievementsButton).height(100);
-
+        table.add(achievementsButton).height(85);
+        table.row();
+        table.add(quitButton).height(85).width(400);
         table.row();
         Table table2 = new Table();
         //table2.setFillParent(true);
