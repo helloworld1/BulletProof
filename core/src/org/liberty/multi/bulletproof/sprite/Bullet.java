@@ -33,7 +33,7 @@ public class Bullet extends Sprite implements Poolable {
         } else if (velocity > 250) {
             setColor(Color.GREEN);
         } else if (velocity > 200) {
-            setColor(Color.RED);
+            setColor(Color.YELLOW);
         } else if (velocity > 150) {
             setColor(Color.CYAN);
         } else {
