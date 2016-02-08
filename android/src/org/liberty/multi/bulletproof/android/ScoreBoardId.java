@@ -15,7 +15,7 @@ public class ScoreBoardId {
         put(20, "CgkI67aLqtALEAIQBQ");
         put(25, "CgkI67aLqtALEAIQBg");
         put(30, "CgkI67aLqtALEAIQBw");
-        put(35, "CgkI67aLqtALEAIQCA ");
+        put(35, "CgkI67aLqtALEAIQCA");
         put(40, "CgkI67aLqtALEAIQDQ");
         put(45, "CgkI67aLqtALEAIQDg");
         put(50, "CgkI67aLqtALEAIQDw");
