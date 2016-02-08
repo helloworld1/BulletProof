@@ -75,8 +75,8 @@ project(":android") {
         buildToolsVersion "$androidBuildToolsVersion"
         compileSdkVersion Integer.parseInt("$androidCompileSdkVersion") 
         defaultConfig {
-            versionCode 5 
-            versionName "1.2.2"
+            versionCode 6 
+            versionName "1.2.3"
             minSdkVersion Integer.parseInt("$androidMinSdkVersion")
             targetSdkVersion Integer.parseInt("$androidMinSdkVersion")
             applicationId "org.liberty.multi.bulletproof"

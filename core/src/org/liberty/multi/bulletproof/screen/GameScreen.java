@@ -123,7 +123,11 @@ public class GameScreen implements Screen {
 
         if (event ==GameEventManager.EventType.LevelUp) {
             if (game.soundEnabled) {
-                dingSound.play();
+                new Thread(new Runnable() {
+                    public void run() {
+                        dingSound.play();
+                    }
+                }).start();
             }
         }
 
@@ -228,7 +232,11 @@ public class GameScreen implements Screen {
         explosionEffect.setPosition(aircraft.getCenterX(), aircraft.getCenterY());
         explosionEffect.start();
         if (game.soundEnabled) {
-            explodeSound.play();
+            new Thread(new Runnable() {
+                public void run() {
+                    explodeSound.play();
+                }
+            }).start();
 		}
 		timer.schedule(new Runnable() {
 			@Override
