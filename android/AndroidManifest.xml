@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.liberty.multi.bulletproof.android">
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-feature android:glEsVersion="0x00020000" android:required="true" />
-    
-    <application
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-        android:name="android.support.multidex.MultiDexApplication">
-        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
-        <meta-data android:name="com.google.android.gms.games.APP_ID" android:value="@string/app_id" />
 
+    <application
+        android:allowBackup="true"
+        android:fullBackupContent="true"
+        android:icon="@drawable/ic_launcher"
+        android:isGame="true"
+        android:appCategory="game"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        tools:ignore="UnusedAttribute">
+        <meta-data android:name="com.google.android.gms.games.APP_ID"
+            android:value="@string/app_id"/>
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
+            android:name="org.liberty.multi.bulletproof.android.MainActivity"
+            android:label="@string/app_name" 
             android:screenOrientation="portrait"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize">
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize|screenLayout"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

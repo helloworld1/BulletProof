@@ -8,11 +8,13 @@ import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import org.liberty.multi.bulletproof.BulletProof;
 import org.liberty.multi.bulletproof.actor.StarFieldBackgroundActor;
@@ -39,7 +41,7 @@ public class MainMenuScreen implements Screen {
 
     private TextButton soundButton;
 
-    private TextButton signInOutButton;
+    private TextButton aboutButton;
 
     private TextButton quitButton;
 
@@ -63,10 +65,6 @@ public class MainMenuScreen implements Screen {
         mainMusic = game.assetManager.get("audio/main.mp3", Music.class);
         mainMusic.setLooping(true);
 
-        if (preferences.getBoolean(PreferenceKeys.ALWAYS_SIGN_IN_KEY, false)) {
-            game.scoreBoardResolver.signIn();
-        }
-
         gameTitleLabel = new Label("Bullet Proof", game.skin, "big_white_label");
 
         playButton = new TextButton("Play", game.skin, "big_button");
@@ -84,13 +82,14 @@ public class MainMenuScreen implements Screen {
             mainMusic.play();
         }
 
-        // This value is also used to determine the behaviro of the button
-        final boolean alwaysSignIn = preferences.getBoolean(PreferenceKeys.ALWAYS_SIGN_IN_KEY, false);
-        if (alwaysSignIn) {
-            signInOutButton =  new TextButton("Sign out", game.skin, "med_button");
-        } else {
-            signInOutButton =  new TextButton("Sign in", game.skin, "med_button");
-        }
+        aboutButton =  new TextButton("About", game.skin, "med_button");
+        aboutButton.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+                Gdx.net.openURI("https://github.com/helloworld1/BulletProof");
+            }
+        });
 
         quitButton = new TextButton("Quit", game.skin, "big_button");
 
@@ -116,24 +115,6 @@ public class MainMenuScreen implements Screen {
                 game.soundEnabled = !game.soundEnabled;
                 preferences.putBoolean(PreferenceKeys.SOUND_ENABLED_KEY, game.soundEnabled);
                 preferences.flush();
-
-                game.setScreen(new MainMenuScreen(game));
-                dispose();
-            }
-        });
-
-        signInOutButton.addListener(new ChangeListener() {
-            @Override
-            public void changed(ChangeEvent event, Actor actor) {
-                if (alwaysSignIn) {
-                    preferences.putBoolean(PreferenceKeys.ALWAYS_SIGN_IN_KEY, false);
-                    preferences.flush();
-                    game.scoreBoardResolver.signOut();
-                } else {
-                    preferences.putBoolean(PreferenceKeys.ALWAYS_SIGN_IN_KEY, true);
-                    preferences.flush();
-                    game.scoreBoardResolver.signIn();
-                }
 
                 game.setScreen(new MainMenuScreen(game));
                 dispose();
@@ -177,7 +158,7 @@ public class MainMenuScreen implements Screen {
         Table table2 = new Table();
         //table2.setFillParent(true);
         table2.add(soundButton).height(60).width(200).spaceRight(25);
-        table2.add(signInOutButton).height(60).width(180).spaceLeft(25);
+        table2.add(aboutButton).height(60).width(180).spaceLeft(25);
         table.add(table2);
 
         // Use default handling for back key

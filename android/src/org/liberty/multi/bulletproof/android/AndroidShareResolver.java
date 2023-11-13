@@ -2,6 +2,8 @@ package org.liberty.multi.bulletproof.android;
 
 import android.content.Context;
 import android.content.Intent;
+
+import org.liberty.multi.bulletproof.R;
 import org.liberty.multi.bulletproof.resolver.ShareResolver;
 
 public class AndroidShareResolver implements ShareResolver {

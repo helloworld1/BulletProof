@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Bullet Proof</string>
-    <string name="app_id">399520226155</string>
+    <string name="app_id" translatable="false">399520226155</string>
     <string name="sign_in_failed_text">Failed to sign in to Google Play Services!</string>
     <string name="sign_in_succeeded_text">Successfully signed in to Google Play Services!</string>
-    <string name="signing_in_text">Signing in</string>
-    <string name="signing_out_text">Signing out</string>
     <string name="share_text">Share</string>
     <string name="share_title">Bullet Proof</string>
 </resources>

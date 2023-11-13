@@ -3,15 +3,6 @@ package org.liberty.multi.bulletproof.resolver;
 public class DummyScoreBoard implements ScoreBoardResolver {
 
     @Override
-    public boolean isSignedIn() {
-        return false;
-    }
-
-    @Override
-    public void signIn() {
-    }
-
-    @Override
     public void viewLeaderboard() {
     }
 
@@ -27,10 +18,5 @@ public class DummyScoreBoard implements ScoreBoardResolver {
     @Override
     public void submitHighBullet(int bullets) {
     }
-
-    @Override
-    public void signOut() {
-    }
-
 }
 

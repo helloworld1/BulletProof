@@ -12,8 +12,8 @@ launchIPadSimulator.dependsOn build
 launchIOSDevice.dependsOn build
 createIPA.dependsOn build
 
-
-eclipse.project {
-    name = appName + "-ios"
-    natures 'org.robovm.eclipse.RoboVMNature'
+robovm {
+	archs = "arm64"
 }
+
+eclipse.project.name = appName + "-ios"

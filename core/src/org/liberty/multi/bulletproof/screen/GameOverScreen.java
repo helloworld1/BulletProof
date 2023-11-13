@@ -180,11 +180,9 @@ public class GameOverScreen implements Screen {
     private void submitHighscore() {
         float highTime = preferences.getFloat(PreferenceKeys.HIGH_SCORE_TIME_KEY, 0.0f);
         int highBullet = preferences.getInteger(PreferenceKeys.HIGH_SCORE_BULLET_KEY, 0);
-        // Only submit if the user has successfully signed in
-        if (preferences.getBoolean(PreferenceKeys.ALWAYS_SIGN_IN_KEY, false)) {
-            game.scoreBoardResolver.submitBestTime(highTime);
-            game.scoreBoardResolver.submitHighBullet(highBullet);
-        }
+
+        game.scoreBoardResolver.submitBestTime(highTime);
+        game.scoreBoardResolver.submitHighBullet(highBullet);
     }
 
 

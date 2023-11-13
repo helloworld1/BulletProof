@@ -76,5 +76,10 @@ public class AircraftControlGestureListener implements GestureListener {
         // TODO Auto-generated method stub
         return false;
     }
+
+    @Override
+    public void pinchStop() {
+
+    }
 }
 
