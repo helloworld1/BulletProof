@@ -26,7 +26,7 @@ public class GameOverScreen implements Screen {
 
     private GameInfo stat;
 
-    private TextButton retryButton;
+    private TextButton againButton;
     private TextButton shareButton;
     private TextButton replayButton;
     private TextButton mainScreenButton;
@@ -56,9 +56,9 @@ public class GameOverScreen implements Screen {
         String highBullet = "" + preferences.getInteger(PreferenceKeys.HIGH_SCORE_BULLET_KEY, 0);
 
 
-        retryButton = new TextButton("Retry", game.skin, "big_button");
+        againButton = new TextButton("Again", game.skin, "big_button");
 
-        retryButton.addListener(new ChangeListener() {
+        againButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 game.setScreen(new GameScreen(game, null));
@@ -115,7 +115,7 @@ public class GameOverScreen implements Screen {
         table.row();
         table.add(highBulletCountLabel).height(60);
         table.row();
-        table.add(retryButton).height(80).width(400);
+        table.add(againButton).height(80).width(400);
         table.row();
         table.add(replayButton).height(80).width(400);
         table.row();
