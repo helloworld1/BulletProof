@@ -122,13 +122,7 @@ public class GameScreen implements Screen {
         GameEventManager.EventType event = gameEventManager.retrieveEvent();
 
         if (event ==GameEventManager.EventType.LevelUp) {
-            if (game.soundEnabled) {
-                new Thread(new Runnable() {
-                    public void run() {
-                        dingSound.play();
-                    }
-                }).start();
-            }
+            dingSound.play();
         }
 
         if (event == GameEventManager.EventType.FastBullet) {
@@ -231,13 +225,8 @@ public class GameScreen implements Screen {
         explosionEffect.reset();
         explosionEffect.setPosition(aircraft.getCenterX(), aircraft.getCenterY());
         explosionEffect.start();
-        if (game.soundEnabled) {
-            new Thread(new Runnable() {
-                public void run() {
-                    explodeSound.play();
-                }
-            }).start();
-		}
+        explodeSound.play();
+
 		timer.schedule(new Runnable() {
 			@Override
 			public void run() {
