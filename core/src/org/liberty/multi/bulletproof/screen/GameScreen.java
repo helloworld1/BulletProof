@@ -121,8 +121,15 @@ public class GameScreen implements Screen {
 
         GameEventManager.EventType event = gameEventManager.retrieveEvent();
 
-        if (event ==GameEventManager.EventType.LevelUp) {
-            dingSound.play();
+        if (event ==GameEventManager.EventType.LevelUp && game.soundEnabled) {
+
+            timer.schedule(new Runnable() {
+                @Override
+                public void run() {
+                    dingSound.play();
+
+                }
+            }, 0.05f);
         }
 
         if (event == GameEventManager.EventType.FastBullet) {
@@ -225,9 +232,18 @@ public class GameScreen implements Screen {
         explosionEffect.reset();
         explosionEffect.setPosition(aircraft.getCenterX(), aircraft.getCenterY());
         explosionEffect.start();
-        explodeSound.play();
 
-		timer.schedule(new Runnable() {
+        if (game.soundEnabled) {
+            timer.schedule(new Runnable() {
+                @Override
+                public void run() {
+                    explodeSound.play();
+
+                }
+            }, 0.05f);
+        }
+
+        timer.schedule(new Runnable() {
 			@Override
 			public void run() {
 				game.setScreen(new GameOverScreen(game, gameInfo));

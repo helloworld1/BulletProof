@@ -1,5 +1,6 @@
 package org.liberty.multi.bulletproof.android;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -7,6 +8,8 @@ import android.widget.Toast;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
+import com.badlogic.gdx.backends.android.AndroidAudio;
+import com.badlogic.gdx.backends.android.AsynchronousAndroidAudio;
 import com.google.android.gms.games.AuthenticationResult;
 import com.google.android.gms.games.PlayGames;
 
@@ -121,5 +124,10 @@ public class MainActivity extends AndroidApplication implements ScoreBoardResolv
                         });
             }
         });
+    }
+
+    @Override
+    public AndroidAudio createAudio(Context context, AndroidApplicationConfiguration config) {
+        return new AsynchronousAndroidAudio(context, config);
     }
 }

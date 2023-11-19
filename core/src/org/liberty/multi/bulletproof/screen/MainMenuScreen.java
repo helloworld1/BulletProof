@@ -116,8 +116,13 @@ public class MainMenuScreen implements Screen {
                 preferences.putBoolean(PreferenceKeys.SOUND_ENABLED_KEY, game.soundEnabled);
                 preferences.flush();
 
-                game.setScreen(new MainMenuScreen(game));
-                dispose();
+                if (game.soundEnabled) {
+                    soundButton.setText("Sound on");
+                    mainMusic.play();
+                } else {
+                    soundButton.setText("Sound off");
+                    mainMusic.stop();
+                }
             }
         });
 
