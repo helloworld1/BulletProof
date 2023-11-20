@@ -24,7 +24,7 @@ public class GameEventManager {
         nextFastBulletTime = getInterval(FAST_BULLET_BASELINE);
         nextSuperFastBulletTime = getInterval(SUPER_FAST_BULLET_BASELINE);
         nextUltraFastBulletTime = getInterval(ULTRA_FAST_BULLET_BASELINE);
-        currentLevel = gameInfo.getCurrentLevel();
+        currentLevel = 0;
     }
 
     public EventType retrieveEvent() {

@@ -111,7 +111,7 @@ public class GameScreen implements Screen {
         Gdx.input.setCatchBackKey(true);
     }
 
-    private void spawnBullets() {
+    private void spawnBullets(GameEventManager.EventType event) {
         for (int i = bullets.size ; i < gameInfo.getMaxBulletCount(); i++) {
             Bullet bullet = bulletPool.obtain();
             bullet.initRandom(aircraft.getCenterX(), aircraft.getCenterY(), gameInfo.getBulletVelocity());
@@ -119,18 +119,6 @@ public class GameScreen implements Screen {
             bullets.add(bullet);
         }
 
-        GameEventManager.EventType event = gameEventManager.retrieveEvent();
-
-        if (event ==GameEventManager.EventType.LevelUp && game.soundEnabled) {
-
-            timer.schedule(new Runnable() {
-                @Override
-                public void run() {
-                    dingSound.play();
-
-                }
-            }, 0.05f);
-        }
 
         if (event == GameEventManager.EventType.FastBullet) {
             for (int i = 0; i < gameInfo.getMaxBulletCount() / 2; i++) {
@@ -185,11 +173,11 @@ public class GameScreen implements Screen {
 
         gameInfo.update(delta);
 
-
         game.batch.setProjectionMatrix(camera.combined);
         game.batch.begin();
         this.background.draw(game.batch);
         drawScore();
+        GameEventManager.EventType event = gameEventManager.retrieveEvent();
 
         for (Bullet bullet : bullets) {
             bullet.move(delta);
@@ -204,7 +192,7 @@ public class GameScreen implements Screen {
         }
 
         if (gameState == GameState.Normal) {
-            spawnBullets();
+            spawnBullets(event);
             this.gameInfo.gameRecorder.recordAircraft(this.aircraft.getX(), this.aircraft.getY(), gameInfo.getGameElapseTimeSec());
             this.aircraft.draw(game.batch);
             handleBullets();
@@ -214,7 +202,16 @@ public class GameScreen implements Screen {
             explosionEffect.draw(game.batch, delta);
         }
 
+        playSoundEffect(event);
+
         game.batch.end();
+    }
+
+    private void playSoundEffect(GameEventManager.EventType event) {
+        if (event == GameEventManager.EventType.LevelUp && game.soundEnabled) {
+            float pitch = (float) Math.min(2.0f, 1f + (gameInfo.getCurrentLevel() - 1.0f) / 20.0f);
+            dingSound.play(1, pitch, 0);
+        }
     }
 
     private void drawScore() {
@@ -233,15 +230,7 @@ public class GameScreen implements Screen {
         explosionEffect.setPosition(aircraft.getCenterX(), aircraft.getCenterY());
         explosionEffect.start();
 
-        if (game.soundEnabled) {
-            timer.schedule(new Runnable() {
-                @Override
-                public void run() {
-                    explodeSound.play();
-
-                }
-            }, 0.05f);
-        }
+        explodeSound.play();
 
         timer.schedule(new Runnable() {
 			@Override
