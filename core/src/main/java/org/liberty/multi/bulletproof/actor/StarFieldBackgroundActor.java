@@ -23,7 +23,7 @@ public class StarFieldBackgroundActor extends Actor {
     private ShaderProgram shader;
 
     public StarFieldBackgroundActor(BulletProof game, float viewportWidth, float viewportHeight) {
-        Texture starFieldTexture = game.assetManager.get("images/star-field.etc1", Texture.class);
+        Texture starFieldTexture = game.assetManager.get("images/star-field.png", Texture.class);
         starFieldTexture.setWrap(TextureWrap.Repeat, TextureWrap.Repeat);
 
         // Bigger stars and scrolls faster

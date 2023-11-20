@@ -23,7 +23,7 @@ public class BulletProof extends Game {
     public float viewportHeight;
 
     public ScoreBoardResolver scoreBoardResolver;
-    
+
     public ShareResolver shareResolver;
 
     public Skin skin;
@@ -37,9 +37,9 @@ public class BulletProof extends Game {
         this.scoreBoardResolver = scoreBoardResolver;
         this.shareResolver = shareResolver;
     }
-    
+
     @Override
-    public void create() {      
+    public void create() {
         this.viewportWidth = 480;
         this.viewportHeight = 800;
 
@@ -49,11 +49,11 @@ public class BulletProof extends Game {
         assetManager = new AssetManager();
         assetManager.setLoader(ShaderProgram.class, new ShaderAssetLoader(new InternalFileHandleResolver()));
 
-        assetManager.load("images/tut.etc1", Texture.class);
+        assetManager.load("images/tut.png", Texture.class);
         assetManager.load("images/f-15f.png", Texture.class);
-        assetManager.load("images/earth-bg.etc1", Texture.class);
+        assetManager.load("images/earth-bg.png", Texture.class);
         assetManager.load("images/bullet.png", Texture.class);
-        assetManager.load("images/star-field.etc1", Texture.class);
+        assetManager.load("images/star-field.png", Texture.class);
         assetManager.load("effects/explosion.p", ParticleEffect.class);
         assetManager.load("audio/main.mp3", Music.class);
         assetManager.load("audio/explode.mp3", Sound.class);
@@ -74,7 +74,7 @@ public class BulletProof extends Game {
     }
 
     @Override
-    public void render() {      
+    public void render() {
         super.render();
     }
 }

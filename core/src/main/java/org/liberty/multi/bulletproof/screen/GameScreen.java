@@ -80,7 +80,7 @@ public class GameScreen implements Screen {
         this.bullets = new Array<Bullet>();
         this.aircraft = new Aircraft(game);
 
-        this.background = new Sprite(game.assetManager.get("images/earth-bg.etc1", Texture.class), 307, 512);
+        this.background = new Sprite(game.assetManager.get("images/earth-bg.png", Texture.class), 307, 512);
         this.background.setSize(game.viewportWidth, game.viewportHeight);
 
         this.explosionEffect = game.assetManager.get("effects/explosion.p", ParticleEffect.class);

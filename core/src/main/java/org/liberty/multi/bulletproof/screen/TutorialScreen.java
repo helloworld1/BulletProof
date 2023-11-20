@@ -24,7 +24,7 @@ public class TutorialScreen implements Screen {
         this.camera = new OrthographicCamera();
         this.camera.setToOrtho(false, game.viewportWidth, game.viewportHeight);
 
-        this.tutorial1Texture= game.assetManager.get("images/tut.etc1", Texture.class);
+        this.tutorial1Texture= game.assetManager.get("images/tut.png", Texture.class);
 
         tutorial1 = new Sprite(tutorial1Texture, 576, 947);
         tutorial1.setSize(game.viewportWidth, game.viewportHeight);

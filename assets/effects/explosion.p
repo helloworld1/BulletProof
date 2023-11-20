@@ -3,13 +3,13 @@ Untitled
 active: true
 lowMin: 0.0
 lowMax: 0.0
-- Duration -
+- Duration - 
 lowMin: 3000.0
 lowMax: 3000.0
-- Count -
+- Count - 
 min: 100
 max: 100
-- Emission -
+- Emission - 
 lowMin: 0.0
 lowMax: 0.0
 highMin: 41.0
@@ -19,7 +19,7 @@ scalingCount: 1
 scaling0: 1.0
 timelineCount: 1
 timeline0: 0.0
-- Life -
+- Life - 
 lowMin: 0.0
 lowMax: 0.0
 highMin: 2000.0
@@ -29,17 +29,19 @@ scalingCount: 1
 scaling0: 1.0
 timelineCount: 1
 timeline0: 0.0
-- Life Offset -
+independent: false
+- Life Offset - 
 active: false
-- X Offset -
+independent: false
+- X Offset - 
 active: false
-- Y Offset -
+- Y Offset - 
 active: false
-- Spawn Shape -
+- Spawn Shape - 
 shape: ellipse
 edges: false
 side: both
-- Spawn Width -
+- Spawn Width - 
 lowMin: 0.0
 lowMax: 0.0
 highMin: 80.0
@@ -49,7 +51,7 @@ scalingCount: 1
 scaling0: 1.0
 timelineCount: 1
 timeline0: 0.0
-- Spawn Height -
+- Spawn Height - 
 lowMin: 0.0
 lowMax: 0.0
 highMin: 80.0
@@ -59,7 +61,7 @@ scalingCount: 1
 scaling0: 1.0
 timelineCount: 1
 timeline0: 0.0
-- Scale -
+- X Scale - 
 lowMin: 0.0
 lowMax: 0.0
 highMin: 120.0
@@ -73,7 +75,9 @@ timelineCount: 3
 timeline0: 0.0
 timeline1: 0.34246576
 timeline2: 0.94520545
-- Velocity -
+- Y Scale - 
+active: false
+- Velocity - 
 active: true
 lowMin: 0.0
 lowMax: 0.0
@@ -84,7 +88,7 @@ scalingCount: 1
 scaling0: 1.0
 timelineCount: 1
 timeline0: 0.0
-- Angle -
+- Angle - 
 active: true
 lowMin: 0.0
 lowMax: 0.0
@@ -95,13 +99,13 @@ scalingCount: 1
 scaling0: 1.0
 timelineCount: 1
 timeline0: 0.0
-- Rotation -
+- Rotation - 
 active: false
-- Wind -
+- Wind - 
 active: false
-- Gravity -
+- Gravity - 
 active: false
-- Tint -
+- Tint - 
 colorsCount: 15
 colors0: 1.0
 colors1: 1.0
@@ -124,7 +128,7 @@ timeline1: 0.15779817
 timeline2: 0.2825688
 timeline3: 0.42018348
 timeline4: 1.0
-- Transparency -
+- Transparency - 
 lowMin: 0.0
 lowMax: 0.0
 highMin: 1.0
@@ -142,26 +146,28 @@ timeline1: 0.10273973
 timeline2: 0.1780822
 timeline3: 0.49315068
 timeline4: 1.0
-- Options -
+- Options - 
 attached: false
 continuous: false
 aligned: false
 additive: true
 behind: true
-- Image Path -
+premultipliedAlpha: false
+spriteMode: single
+- Image Paths -
 particle-fire.png
 
 
 Untitled
 - Delay -
 active: false
-- Duration -
+- Duration - 
 lowMin: 3000.0
 lowMax: 3000.0
-- Count -
+- Count - 
 min: 100
 max: 100
-- Emission -
+- Emission - 
 lowMin: 0.0
 lowMax: 0.0
 highMin: 10.0
@@ -171,7 +177,7 @@ scalingCount: 1
 scaling0: 1.0
 timelineCount: 1
 timeline0: 0.0
-- Life -
+- Life - 
 lowMin: 0.0
 lowMax: 0.0
 highMin: 2000.0
@@ -181,15 +187,17 @@ scalingCount: 1
 scaling0: 1.0
 timelineCount: 1
 timeline0: 0.0
-- Life Offset -
+independent: false
+- Life Offset - 
 active: false
-- X Offset -
+independent: false
+- X Offset - 
 active: false
-- Y Offset -
+- Y Offset - 
 active: false
-- Spawn Shape -
+- Spawn Shape - 
 shape: point
-- Spawn Width -
+- Spawn Width - 
 lowMin: 0.0
 lowMax: 0.0
 highMin: 50.0
@@ -199,7 +207,7 @@ scalingCount: 1
 scaling0: 1.0
 timelineCount: 1
 timeline0: 0.0
-- Spawn Height -
+- Spawn Height - 
 lowMin: 0.0
 lowMax: 0.0
 highMin: 50.0
@@ -209,7 +217,7 @@ scalingCount: 1
 scaling0: 1.0
 timelineCount: 1
 timeline0: 0.0
-- Scale -
+- X Scale - 
 lowMin: 0.0
 lowMax: 0.0
 highMin: 32.0
@@ -221,7 +229,9 @@ scaling1: 1.0
 timelineCount: 2
 timeline0: 0.0
 timeline1: 0.9726027
-- Velocity -
+- Y Scale - 
+active: false
+- Velocity - 
 active: true
 lowMin: 0.0
 lowMax: 0.0
@@ -232,7 +242,7 @@ scalingCount: 1
 scaling0: 1.0
 timelineCount: 1
 timeline0: 0.0
-- Angle -
+- Angle - 
 active: true
 lowMin: 0.0
 lowMax: 0.0
@@ -243,20 +253,20 @@ scalingCount: 1
 scaling0: 1.0
 timelineCount: 1
 timeline0: 0.0
-- Rotation -
+- Rotation - 
 active: false
-- Wind -
+- Wind - 
 active: false
-- Gravity -
+- Gravity - 
 active: false
-- Tint -
+- Tint - 
 colorsCount: 3
 colors0: 0.16470589
 colors1: 0.0
 colors2: 1.0
 timelineCount: 1
 timeline0: 0.0
-- Transparency -
+- Transparency - 
 lowMin: 0.0
 lowMax: 0.0
 highMin: 1.0
@@ -272,11 +282,14 @@ timeline0: 0.0
 timeline1: 0.2
 timeline2: 0.6438356
 timeline3: 1.0
-- Options -
+- Options - 
 attached: true
 continuous: false
 aligned: false
 additive: true
 behind: false
-- Image Path -
+premultipliedAlpha: false
+spriteMode: single
+- Image Paths -
 particle-fire.png
+

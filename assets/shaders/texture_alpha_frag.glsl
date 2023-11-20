@@ -15,7 +15,7 @@ void main()
     // The texture's green channel is also alpha
     // for etc1 texture compressiion
     //  We also apply textureAlpha here.
-    textureColor.a = textureColor.g * textureAlpha;
+    // textureColor.a = textureColor.g * textureAlpha;
 
-    gl_FragColor = v_color * textureColor;
+    gl_FragColor = textureAlpha * textureColor;
 }
