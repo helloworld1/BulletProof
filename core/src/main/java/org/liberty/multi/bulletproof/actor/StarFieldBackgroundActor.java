@@ -10,31 +10,19 @@ import org.liberty.multi.bulletproof.BulletProof;
 
 public class StarFieldBackgroundActor extends Actor {
 
-    private BulletProof game;
+    private final Sprite backgroundSprite;
 
-    private Sprite backgroundSprite;
+    private final ShaderProgram shader;
 
-    private Sprite backgroundSprite2;
-
-    private float scrollTimer = 0.0f;
+    private float scrollTimer1 = 0.0f;
 
     private float scrollTimer2 = 0.0f;
 
-    private ShaderProgram shader;
-
     public StarFieldBackgroundActor(BulletProof game, float viewportWidth, float viewportHeight) {
         Texture starFieldTexture = game.assetManager.get("images/star-field.png", Texture.class);
-        starFieldTexture.setWrap(TextureWrap.Repeat, TextureWrap.Repeat);
+        starFieldTexture.setWrap(TextureWrap.MirroredRepeat, TextureWrap.MirroredRepeat);
 
-        // Bigger stars and scrolls faster
-        backgroundSprite = new Sprite(starFieldTexture, 0, 0, 240, 400);
-
-        // Smaller stars and scrolls slower
-        backgroundSprite2 = new Sprite(starFieldTexture, 0, 0, 614, 1024);
-
-        backgroundSprite.setSize(viewportWidth * 2, viewportHeight);
-
-        backgroundSprite2.setSize(viewportWidth * 2, viewportHeight);
+        backgroundSprite = new Sprite(starFieldTexture);
 
         shader = game.assetManager.get("shaders/texture_alpha", ShaderProgram.class);
     }
@@ -42,25 +30,21 @@ public class StarFieldBackgroundActor extends Actor {
     @Override
     public void draw(Batch batch, float parentAlpha) {
         batch.setShader(shader);
-        shader.setUniformf("textureAlpha", 1.0f);
+        shader.setUniformf("textureDimensionScaling1", 0.5f);
+        shader.setUniformf("textureDimensionScaling2", 1.5f);
+        shader.setUniformf("textureAlphaScaling1", 0.5f);
+        shader.setUniformf("textureAlphaScaling2", 1.0f);
+        shader.setUniformf("xOffset1", scrollTimer1);
+        shader.setUniformf("xOffset2", scrollTimer2);
         backgroundSprite.draw(batch);
-        batch.flush();
-
-        shader.setUniformf("textureAlpha", 0.6f);
-        backgroundSprite2.draw(batch);
         batch.setShader(null);
     }
 
+    @Override
     public void act(float delta) {
         // delta / ? controls the speed of the scrolling
-        scrollTimer = (scrollTimer + delta / 50) % 1.0f;
-        scrollTimer2 = (scrollTimer2 + delta / 19) % 1.0f;
-
-        backgroundSprite.setU(scrollTimer);
-        backgroundSprite.setU2(scrollTimer + 0.5f);
-        
-        backgroundSprite2.setU(scrollTimer);
-        backgroundSprite2.setU2(scrollTimer + 1.0f);
+        scrollTimer1 = scrollTimer1 + delta / 50;
+        scrollTimer2 = scrollTimer2 + delta / 19;
     }
 }
 
